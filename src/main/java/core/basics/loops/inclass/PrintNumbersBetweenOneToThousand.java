@@ -7,8 +7,13 @@ public class PrintNumbersBetweenOneToThousand {
          */
 
         // Todo : Add initialization code
+        int i = 1;
 
         // Todo: Add loop with condition and update logic
+        while (i <= 1000){
+            System.out.println(i);
+            i++;
+        }
 
     }
 }
