@@ -1,4 +1,4 @@
-package core.basics.function.inclass;
+package core.basics.loops.inclass;
 
 public class FunctionExamples {
 
