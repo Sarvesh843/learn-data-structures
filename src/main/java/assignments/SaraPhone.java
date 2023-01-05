@@ -1,4 +1,4 @@
-package core.basics.assignments;
+package assignments;
 
 public class SaraPhone {
     /**
@@ -27,7 +27,7 @@ public class SaraPhone {
      */
 
     static int Phone(int N,int K,int M){
-        int minApps = (int) Math.ceil(M/K);
+        int minApps = (int) Math.ceil(M*1.0/K);
         if(minApps > N){
             return -1;
         }
