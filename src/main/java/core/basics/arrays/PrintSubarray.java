@@ -24,7 +24,7 @@ public class PrintSubarray {
                               int startIndex,
                               int endIndex){
 
-        for(int i= startIndex; i <= endIndex ; i++){
+        for(int i= startIndex; i <= endIndex; i++){
             System.out.print(arr[i]);
         }
     }
