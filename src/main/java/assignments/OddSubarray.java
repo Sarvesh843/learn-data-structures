@@ -22,6 +22,26 @@ public class OddSubarray {
         return count;
     }
 
+    // O(n)
+    static long oddSubarraysApproach2(int[] arr){
+        long count = 0;
+        int i=0;
+        while (i < arr.length){
+                int j = i;
+                while(j < arr.length && arr[j]%2==1){
+                    j++;
+                }
+                int oddCount = j-i;
+                count += getSubarrays(oddCount);
+                i = j+1;
+        }
+        return count;
+    }
+
+    static long getSubarrays(long n){
+        return n*(n+1)/2;
+    }
+
     public static void main(String[] args) {
         FastReader sc = new FastReader();
         int n = sc.nextInt();
