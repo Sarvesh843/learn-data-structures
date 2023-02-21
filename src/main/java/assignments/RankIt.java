@@ -5,6 +5,8 @@ import java.util.Scanner;
 
 public class RankIt {
 
+    // https://www.geeksforgeeks.org/next-permutation/
+
     static int getRank(String s){
         char[] arr = s.toCharArray();
 
@@ -14,7 +16,6 @@ public class RankIt {
         while(!s.equals(new String(arr))){
             permCount++;
             generateNextPermutation(arr);
-            System.out.println(new String(arr));
         }
 
         return permCount;
@@ -23,13 +24,16 @@ public class RankIt {
     static void generateNextPermutation(char[] arr){
         int index = findSmallerAdjacentIndex(arr);
 
+
         if( index != -1){
+            int justGreaterElementIndex =
+                    findJustLargerElementIndex(arr, index+1, arr[index]);
+
+            swap(arr, index, justGreaterElementIndex);
+
             Arrays.sort(arr,
                     index+1,
                     arr.length);
-
-
-            swap(arr, index, arr.length-1);
         }
 
     }
@@ -53,14 +57,24 @@ public class RankIt {
         return -1;
     }
 
+    static int findJustLargerElementIndex(char[] arr, int startIndex, int el){
+        int largerElement = Integer.MAX_VALUE;
+        int largerIndex = -1;
+
+        for(int i = startIndex; i < arr.length; i++){
+            if( arr[i] > el && arr[i] < largerElement){
+                largerElement = arr[i];
+                largerIndex = i;
+            }
+        }
+
+        return largerIndex;
+    }
+
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String s = sc.next();
         System.out.println(getRank(s));
     }
-
-
-
-
 }
