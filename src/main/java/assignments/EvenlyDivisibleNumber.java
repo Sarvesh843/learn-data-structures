@@ -3,7 +3,7 @@ package assignments;
 import java.util.*;
 
 public class EvenlyDivisibleNumber {
-    static int gcd(int a, int b){
+    static long gcd(long a, long b){
         if( b == 0){
             return a;
         }
@@ -12,7 +12,7 @@ public class EvenlyDivisibleNumber {
         }
     }
 
-    static int lcm(int a, int b){
+    static long lcm(long a, long b){
         return (a*b)/ gcd(a,b);
     }
 
@@ -20,9 +20,9 @@ public class EvenlyDivisibleNumber {
         // Your code here
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        int res = 1;// 2
+        long res = 1;// 2
 
-        for(int i=2; i<=n;i++){
+        for(long i=2; i<=n;i++){
             res = lcm(res, i);
         }
 
