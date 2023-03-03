@@ -16,8 +16,16 @@ public class Bank {
                 22,
                 "student");
 
-        System.out.println(c1.name);
-        System.out.println(c2.name);
+        Customer c3 = new Customer(
+                3,
+                "Punit",
+                22
+        );
 
+        System.out.println(c1.getName());
+        System.out.println(c1.getOccupation());
+
+        System.out.println(c2.getName());
+        System.out.println(c3.getName());
     }
 }
