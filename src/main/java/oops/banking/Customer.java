@@ -6,6 +6,15 @@ public class Customer {
     private int age;
     private String occupation;
 
+    private static int countAccount = 0;
+
+    public Customer(String name, int age) {
+        this.accountNumber = (++countAccount);
+        this.name = name;
+        this.age = age;
+        this.occupation = "";
+    }
+
     public Customer(int accountNumber,
                     String name,
                     int age,
@@ -14,6 +23,7 @@ public class Customer {
         this.name = name;
         this.age = age;
         this.occupation = occupation;
+        countAccount++;
     }
 
     public Customer(int accountNumber, String name, int age) {
@@ -21,6 +31,7 @@ public class Customer {
         this.name = name;
         this.age = age;
         this.occupation = "";
+        countAccount++;
     }
 
     public int getAccountNumber() {
@@ -49,5 +60,9 @@ public class Customer {
 
     public void setOccupation(String occupation) {
         this.occupation = occupation;
+    }
+
+    public static int getCountAccount() {
+        return countAccount;
     }
 }

@@ -10,6 +10,7 @@ public class Bank {
                 23,
                 "student");
 
+
         Customer c2 = new Customer(
                 2,
                 "Kunal",
@@ -22,10 +23,12 @@ public class Bank {
                 22
         );
 
-        System.out.println(c1.getName());
-        System.out.println(c1.getOccupation());
+        Customer c4 = new Customer(
+                "Sudiptio",
+                26
+        );
 
-        System.out.println(c2.getName());
-        System.out.println(c3.getName());
+
+        System.out.println(c4.getAccountNumber());
     }
 }
