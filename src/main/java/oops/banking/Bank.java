@@ -29,6 +29,6 @@ public class Bank {
         );
 
 
-        System.out.println(c4.getAccountNumber());
+        c1.setName("c1").setAge(12);
     }
 }
